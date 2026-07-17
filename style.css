@@ -63,6 +63,10 @@ solar panel component color: #607386
   background-color: #a7bac6;
   border-radius: 20px;
   box-shadow: -3px -3px 0px 2px #00000040;
+  text-align: right;
+}
+#screen-output {
+  font-size: 32px;
 }
 button {
   width: 100px;
@@ -74,6 +78,9 @@ button {
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;     /* IE 10 and Edge Legacy */
+  user-select: none;
 }
 .all-buttons {
   width: 600px;
