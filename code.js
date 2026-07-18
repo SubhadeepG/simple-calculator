@@ -5,15 +5,19 @@ let firstOperand = 0;
 let secondOperand = 0;
 let operator = "";
 
+let operatorList = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+    "\u00D7": (a, b) => a * b, // multiply
+    "\u00F7": (a, b) => a / b, // divide
+    "%": (a, b) => a % b,
+};
+
 function operate() {
     const num1 = Number(firstOperand);
     const num2 = Number(secondOperand);
     let result;
-    if(operator === "+") result = num1 + num2;
-    else if(operator === "-") result = num1 - num2;
-    else if(operator === "&#215") result = num1 * num2;
-    else if(operator === "&#247") result = num1 / num2; 
-    else if(operator === "&#37") result = num1 % num2;
+    if(operator in operatorList) result = operatorList[operator](num1, num2);
     else console.log("error: operator not found");
     secondOperand = 0;
     operator = "";
